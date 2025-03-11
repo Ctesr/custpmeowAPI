@@ -1,0 +1,17 @@
+name: Scheduled Task Example
+
+on:
+  schedule:
+    - cron: '43 18 * * *'  # 每天的 09:00 运行
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run a script or command
+        run: |
+          echo "This is a scheduled task!"
