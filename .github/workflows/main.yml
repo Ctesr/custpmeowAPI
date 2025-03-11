@@ -18,4 +18,4 @@ jobs:
       run: npm install -g apifox-cli
 
     - name: Running Test Scenario
-      run: apifox run https://api.apifox.com/api/v1/projects/5952471/api-test/ci-config/481268/detail?token=x1-h_fnK3miN6gZ-tqCCtt -r html,cli
+      run: apifox run https://api.apifox.com/api/v1/projects/5952471/api-test/ci-config/481269/detail?token=xxm4dMISK4zUjvTI3aMKTI -r html,cli
