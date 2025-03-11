@@ -2,7 +2,7 @@ name: Scheduled Task Example
 
 on:
   schedule:
-    - cron: '43 18 * * *'  # 每天的 09:00 运行
+    - cron: '0 9,18 * * *'  # 每天的 09:00/18:00 运行
 
 jobs:
   example_job:
