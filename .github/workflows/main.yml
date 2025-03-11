@@ -18,4 +18,4 @@ jobs:
       run: npm install -g apifox-cli
 
     - name: Running Test Scenario
-      run: apifox run --access-token $APIFOX_ACCESS_TOKEN -t 6127760 -e 30089206 -n 1 -r html,cli
+      run: apifox run --access-token $APIFOX_ACCESS_TOKEN -t 51696415 -n 1 -r html,cli
