@@ -1,6 +1,7 @@
 name: Automated API Tests
 
-on: [push, pull_request]
+on:
+  workflow_call: # 定义为可复用任务
 
 jobs:
   build:
