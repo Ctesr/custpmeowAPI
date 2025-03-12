@@ -1,0 +1,23 @@
+name: Scheduled Task Example
+
+on:
+  schedule:
+    - cron: '0 2,10 * * *' # 每天的 09:00 和 18:00触发
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display Current Time
+        run: |
+          echo "Current Time (UTC): $(date -u)"
+          echo "Current Time (Local): $(date)"
+
+      - name: Run a script or command
+        run: |
+          echo "定时任务测试"
