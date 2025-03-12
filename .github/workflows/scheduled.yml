@@ -2,7 +2,7 @@ name: Scheduled Task Example
 
 on:
   schedule:
-    - cron: '0 2,10 * * *' # 每天的 02:00 和 10:00 (UTC) 触发
+    - cron: '0 4,10 * * *' # 每天的 02:00 和 10:00 (UTC) 触发
 
 jobs:
   example_job:
