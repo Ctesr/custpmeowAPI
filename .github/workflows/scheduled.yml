@@ -2,8 +2,7 @@ name: Scheduled Task Example
 
 on:
   schedule:
-    - cron: '0 2,10 * * *' # 每天的 09:00 和 18:00触发
-  workflow_dispatch: # 允许手动触发
+    - cron: '0 2,10 * * *' # 每天的 02:00 和 10:00 (UTC) 触发
 
 jobs:
   example_job:
@@ -20,4 +19,16 @@ jobs:
 
       - name: Run a script or command
         run: |
-          echo "定时任务测试"
+          echo "定时任务测试开始"
+
+      - name: Run meowflow.yml
+        run: |
+          echo "运行喵福禄API任务开始"
+
+      - name: Run main.yml
+        run: |
+          echo "运行定制喵API任务开始"
+          
+      - name: Complete scheduled task
+        run: |
+          echo "定时任务测试结束"
