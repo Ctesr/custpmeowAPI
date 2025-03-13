@@ -1,4 +1,4 @@
-name: Automated API Tests
+name: Automated meowflowAPI
 
 on:
   workflow_call: # 定义为可复用任务
