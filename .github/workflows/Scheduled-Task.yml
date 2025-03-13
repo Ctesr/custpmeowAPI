@@ -2,7 +2,7 @@ name: Scheduled Task Example
 
 on:
   schedule:
-    - cron: '10 * * * *' # 每天的 02:00 和 10:00 (UTC) 触发
+    - cron: '0 1,10 * * *'  # 每天的 04:00 和 10:00 (UTC) 触发
   workflow_dispatch:  # 允许手动触发
 
 jobs:
@@ -22,12 +22,17 @@ jobs:
         run: |
           echo "定时任务测试开始"
 
-      - name: Run meowflow.yml
-        uses: ./.github/workflows/main.yml # 调用可复用工作流
+  call_meowflow_workflow:
+    uses: ./.github/workflows/meowflow.yml  # 调用可复用工作流
+    
+  call_main_workflow:
+    uses: ./.github/workflows/main.yml  # 调用可复用工作流
 
-      - name: Run main.yml
-        uses: ./.github/workflows/meowflow.yml # 调用可复用工作流
+  complete_task:
+    runs-on: ubuntu-latest
+    needs: [call_meowflow_workflow, call_main_workflow]  # 依赖前面的任务
 
+    steps:
       - name: Complete scheduled task
         run: |
-          echo "定时任务测试结束"    
+          echo "定时任务测试结束"
