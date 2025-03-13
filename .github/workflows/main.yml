@@ -1,4 +1,4 @@
-name: Automated API Tests
+name: Automated customeowAPI
 
 on:
   workflow_call: # 定义为可复用任务
