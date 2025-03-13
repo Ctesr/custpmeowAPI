@@ -22,13 +22,11 @@ jobs:
           echo "定时任务测试开始"
 
       - name: Run meowflow.yml
-        run: |
-          echo "运行喵福禄API任务开始"
+        uses: ./.github/workflows/main.yml # 调用可复用工作流
 
       - name: Run main.yml
-        run: |
-          echo "运行定制喵API任务开始"
-          
+        uses: ./.github/workflows/meowflow.yml # 调用可复用工作流
+
       - name: Complete scheduled task
         run: |
-          echo "定时任务测试结束"
+          echo "定时任务测试结束"    
